@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: My personal website
+title: Jordan Truong
 
 # Your name to show in the footer
 author: Jordan Truong
@@ -21,10 +21,9 @@ author: Jordan Truong
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+ # Resources:
+ #   - Beautiful Jekyll: "https://beautifuljekyll.com"
+ #   - Learn markdown: "https://www.markdowntutorial.com/"
 
 ################
 # --- Logo --- #
@@ -60,7 +59,7 @@ social-network-links:
 # whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname
-  linkedin: jordan-truong
+  linkedin: jordan-truong-a0286b223
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -100,7 +99,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "jordany78.github.io"
+# url-pretty: "jordany78.github.io"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
