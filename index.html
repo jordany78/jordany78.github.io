@@ -3,56 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordan's Website</title>
+    <title>Jordan | Portfolio</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             background: #0f0f0f;
             color: #e0e0e0;
+            line-height: 1.6;
         }
-        .container {
-            text-align: center;
-            padding: 2rem;
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid #1a1a1a;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
             color: #ffffff;
         }
-        p {
-            font-size: 1.2rem;
+        nav .logo span { color: #6c63ff; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav ul li a {
             color: #aaaaaa;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
-        .dot {
+        nav ul li a:hover { color: #6c63ff; }
+
+        /* ── Sections (shared) ── */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .section-title span { color: #6c63ff; }
+        .section-subtitle {
+            color: #777;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── Hero ── */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            padding-top: 5rem;
+        }
+        #hero .badge {
             display: inline-block;
-            width: 8px;
-            height: 8px;
-            margin: 0 3px;
-            border-radius: 50%;
-            background: #aaaaaa;
-            animation: pulse 1.4s infinite ease-in-out;
+            background: rgba(108, 99, 255, 0.15);
+            color: #6c63ff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(108, 99, 255, 0.3);
         }
-        .dot:nth-child(2) { animation-delay: 0.2s; }
-        .dot:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes pulse {
-            0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
-            40% { opacity: 1; transform: scale(1); }
+        #hero h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        #hero h1 span { color: #6c63ff; }
+        #hero p {
+            font-size: 1.15rem;
+            color: #aaaaaa;
+            max-width: 550px;
+            margin-bottom: 2rem;
+        }
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary {
+            background: #6c63ff;
+            color: #ffffff;
+        }
+        .btn-primary:hover { box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4); }
+        .btn-outline {
+            border: 1px solid #333;
+            color: #e0e0e0;
+            background: transparent;
+        }
+        .btn-outline:hover { border-color: #6c63ff; color: #6c63ff; }
+
+        /* ── About ── */
+        #about p {
+            color: #bbbbbb;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+        .skill-tag {
+            background: #1a1a2e;
+            color: #6c63ff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #2a2a4a;
+        }
+
+        /* ── Projects ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            background: #161622;
+            border: 1px solid #1e1e30;
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #6c63ff;
+        }
+        .project-card .icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+        .project-card h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .project-card p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .project-card .tags {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .project-card .tags span {
+            font-size: 0.75rem;
+            background: rgba(108, 99, 255, 0.1);
+            color: #6c63ff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        /* ── Contact ── */
+        #contact { text-align: center; }
+        #contact p {
+            color: #aaaaaa;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #222;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            color: #6c63ff;
+            border-color: #6c63ff;
+        }
+
+        /* ── Banner ── */
+        .wip-banner {
+            background: rgba(108, 99, 255, 0.08);
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.8rem 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #9d97ff;
+            text-align: center;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            nav ul { gap: 1rem; }
+            #hero h1 { font-size: 2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>This website is still in the works</h1>
-        <p>Check back soon
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">jordan<span>.</span></div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="wip-banner">&#128679; This website is still in the works &mdash; more content coming soon!</div>
+        <div class="badge">Welcome to my portfolio</div>
+        <h1>Hi, I'm <span>Jordan</span></h1>
+        <p>A student passionate about building things for the web. Currently learning, creating, and growing as a developer.</p>
+        <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <p class="section-subtitle">A bit about who I am</p>
+        <p>
+            I'm a student who enjoys problem-solving and creating things with code.
+            I'm always looking to learn new technologies and improve my skills.
         </p>
-    </div>
+        <p>
+            When I'm not coding, you can find me exploring new ideas, working on side projects,
+            or diving into something I'm curious about.
+        </p>
+        <div class="skills-list">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <p class="section-subtitle">Things I've built or am working on</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="icon">&#128187;</div>
+                <h3>Portfolio Website</h3>
+                <p>This personal portfolio site &mdash; designed and built from scratch to showcase my work.</p>
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="icon">&#128640;</div>
+                <h3>Coming Soon</h3>
+                <p>More projects are on the way. Stay tuned as I continue to build and learn!</p>
+                <div class="tags">
+                    <span>TBD</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="icon">&#128161;</div>
+                <h3>Coming Soon</h3>
+                <p>Got ideas cooking. Check back later for updates!</p>
+                <div class="tags">
+                    <span>TBD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p>Have a question or want to work together? Feel free to reach out!</p>
+        <a href="mailto:your-email@example.com" class="btn btn-primary">Say Hello</a>
+        <div class="social-links">
+            <a href="https://github.com/jordany78" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Jordan. Built with good vibes.
+    </footer>
+
 </body>
 </html>
