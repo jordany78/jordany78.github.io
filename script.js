@@ -29,14 +29,36 @@ if (menuToggle && navLinks) {
 
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 	revealItems.forEach((item) => item.classList.add('is-visible'));
-	} else if ('IntersectionObserver' in window) {
-	const revealObserver = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			entry.target.classList.toggle('is-visible', entry.isIntersecting);
-		});
-	}, { threshold: 0.15 });
+		} else {
+		let updateQueued = false;
 
-	revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-	revealItems.forEach((item) => item.classList.add('is-visible'));
+		const updateRevealState = () => {
+			const viewportHeight = document.documentElement.clientHeight;
+
+			revealItems.forEach((item) => {
+				const bounds = item.getBoundingClientRect();
+				const isVisible = item.classList.contains('is-visible');
+				const insideRevealBand = bounds.top < viewportHeight * 0.85 && bounds.bottom > viewportHeight * 0.15;
+				const outsideRevealBand = bounds.bottom < viewportHeight * 0.05 || bounds.top > viewportHeight * 0.95;
+
+				if (!isVisible && insideRevealBand) {
+					item.classList.add('is-visible');
+				} else if (isVisible && outsideRevealBand) {
+					item.classList.remove('is-visible');
+				}
+			});
+
+			updateQueued = false;
+		};
+
+		const queueRevealUpdate = () => {
+			if (updateQueued) return;
+
+			updateQueued = true;
+			window.requestAnimationFrame(updateRevealState);
+		};
+
+		updateRevealState();
+		window.addEventListener('scroll', queueRevealUpdate, { passive: true });
+		window.addEventListener('resize', queueRevealUpdate);
 }
