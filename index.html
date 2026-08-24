@@ -15,10 +15,11 @@
 	<header class="wrap">
 		<nav aria-label="Main navigation">
 			<a class="mark" href="#top"><span class="mark-dot"></span> Jordan Truong</a>
-			<div class="nav-links">
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+			<div class="nav-links" id="nav-links">
 				<a href="#work">Work</a>
 				<a href="#about">About</a>
-				<a class="nav-cta" href="#contact">Let's talk</a>
+				<a class="nav-cta" href="#contact">Contact</a>
 			</div>
 		</nav>
 	</header>
@@ -27,14 +28,14 @@
 		<section class="wrap hero" aria-labelledby="hero-title">
 			<div>
 				<p class="mono eyebrow reveal">Computer science graduate / UBC Okanagan</p>
-				<h1 id="hero-title" class="reveal delay">I make<br><em>useful</em><br>things.</h1>
-				<p class="hero-copy reveal delay">Recent computer science graduate who likes turning messy problems into clear, dependable software. Currently looking for a team building things that matter.</p>
+				<h1 id="hero-title" class="reveal delay">I make<br><em>cool</em><br>things.</h1>
+				<p class="hero-copy reveal delay">Recent computer science graduate who likes turning common problems into clear, dependable software.</p>
 				<div class="hero-actions reveal delay">
 					<a class="button" href="#work">See my work</a>
 					<a class="text-link" href="#contact">Get in touch</a>
 				</div>
 			</div>
-			<div class="orbit" aria-label="Jordan's monogram illustration">
+			<div class="orbit" aria-hidden="true">
 				<div class="portrait-card"><div class="portrait-art"><span>JT</span></div></div>
 				<div class="orbit-label mono">Based in<br>Kelowna, BC</div>
 			</div>
@@ -42,24 +43,24 @@
 
 		<section id="work" class="wrap" aria-labelledby="work-title">
 			<div class="section-heading reveal">
-				<h2 id="work-title">Selected work</h2>
-				<p>Four projects, a lot of curiosity, and an unreasonable number of browser tabs.</p>
+				<h2 id="work-title">Recent Projects</h2>
+				<p>Some awesome projects that showcase my skills and passion for creating things.</p>
 			</div>
 			<div class="project-grid">
-				<article class="project reveal"><div class="project-number mono"><span>01 / 04</span><span>2025</span></div><div><h3>Campus Compass</h3><p>A room-finder that makes navigating a growing campus feel less like an expedition.</p></div><div class="project-bottom"><div class="tags"><span class="tag">React</span><span class="tag">Mapbox</span></div><a class="project-link" href="#contact">View case study +</a></div></article>
-				<article class="project reveal"><div class="project-number mono"><span>02 / 04</span><span>2024</span></div><div><h3>Quiet Hours</h3><p>A lightweight focus timer for students, with ambient sound and local-first session history.</p></div><div class="project-bottom"><div class="tags"><span class="tag">TypeScript</span><span class="tag">Web Audio</span></div><a class="project-link" href="#contact">View case study +</a></div></article>
-				<article class="project reveal"><div class="project-number mono"><span>03 / 04</span><span>2024</span></div><div><h3>Trail Notes</h3><p>An offline-first hiking journal for capturing the small details worth remembering outside.</p></div><div class="project-bottom"><div class="tags"><span class="tag">Swift</span><span class="tag">Core Data</span></div><a class="project-link" href="#contact">View case study +</a></div></article>
-				<article class="project reveal"><div class="project-number mono"><span>04 / 04</span><span>2023</span></div><div><h3>Open Shelf</h3><p>A recommendation engine that helps a community library surface unexpected next reads.</p></div><div class="project-bottom"><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span></div><a class="project-link" href="#contact">View case study +</a></div></article>
+				<article class="project reveal"><div class="project-number mono"><span>01 / 04</span><span>2025</span></div><div><h3>Digital Work Miner</h3><p>A web application that enables users to upload, scan, and analyze their work artifacts.</p></div><div class="project-bottom"><div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span></div><a class="project-link" href="https://github.com/COSC-499-W2025/capstone-project-team-8" target="_blank" rel="noopener noreferrer">View project +</a></div></article>
+				<article class="project reveal"><div class="project-number mono"><span>02 / 04</span><span>WIP</span></div><div><h3>Pantry Match</h3><p>Snap a photo of your grocery receipt, and PantryMatch turns it into a live inventory of your fridge and pantry.</p></div><div class="project-bottom"><div class="tags"><span class="tag">TypeScript</span><span class="tag">HTML</span></div><a class="project-link" href="https://github.com/jordany78/PantryMatch" target="_blank" rel="noopener noreferrer">View project +</a></div></article>
+				<article class="project reveal"><div class="project-number mono"><span>03 / 04</span><span>WIP</span></div><div><h3>Zoopocalypse</h3><p>Zoopocalypse is a top-down arena shooter roguelite where you play as a zookeeper fighting off hordes of mutant animals.</p></div><div class="project-bottom"><div class="tags"><span class="tag">C#</span><span class="tag">Unity</span></div><a class="project-link" href="https://github.com/jordany78/zoopocalypse" target="_blank" rel="noopener noreferrer">View project +</a></div></article>
+				<article class="project reveal"><div class="project-number mono"><span>04 / 04</span><span>WIP</span></div><div><h3>Bee Tycoon</h3><p>A Roblox tycoon game where players build and grow their own bee-keeping empire.</p></div><div class="project-bottom"><div class="tags"><span class="tag">Luau</span><span class="tag">Roblox Studio</span></div><a class="project-link" href="https://github.com/chasew2/bee-tycoon" target="_blank" rel="noopener noreferrer">View project +</a></div></article>
 			</div>
 		</section>
 
 		<section id="about" class="wrap" aria-labelledby="about-title">
-			<div class="about-grid"><h2 id="about-title" class="reveal">A little<br>about me.</h2><div class="about-copy reveal"><p>I am Jordan, a computer science graduate from the University of British Columbia's Okanagan campus. I care about the space where thoughtful design meets solid engineering.</p><p>When I am away from my editor, you will probably find me exploring the Okanagan, making a playlist for a very specific mood, or explaining why a side project is almost finished.</p><div class="facts"><div class="fact mono"><span>Degree</span><span>BSc, Computer Science / 2025</span></div><div class="fact mono"><span>Interests</span><span>Product engineering, systems, UX</span></div><div class="fact mono"><span>Currently</span><span>Open to opportunities</span></div></div></div></div>
+			<div class="about-grid"><h2 id="about-title" class="reveal">A little<br>about me.</h2><div class="about-copy reveal"><p>My name is Jordan, a computer science graduate from the University of British Columbia's Okanagan campus.</p><p>When I am away from my editor, you will probably find me climbing at the Boulder Fields, playing League of Legends, or explaining why a side project is almost finished.</p><div class="facts"><div class="fact mono"><span>Degree</span><span>BSc, Computer Science / 2026</span></div><div class="fact mono"><span>Interests</span><span>Software development, Game design, IT</span></div><div class="fact mono"><span>Currently</span><span>Open to opportunities</span></div></div></div></div>
 		</section>
 
-		<section id="contact" class="contact" aria-labelledby="contact-title"><div class="wrap contact-inner reveal"><div><p class="mono" style="color: var(--coral);">05 / Say hello</p><h2 id="contact-title">Let's build<br>something good.</h2></div><div><p class="contact-note">Have a problem worth working on, a role that sounds like a fit, or just want to compare notes on software? My inbox is open.</p><a class="contact-email" href="mailto:jordan@example.com">jordan@example.com</a></div></div></section>
+		<section id="contact" class="contact" aria-labelledby="contact-title"><div class="wrap contact-inner reveal"><div><p class="mono" style="color: var(--coral);">05 / Say hello</p><h2 id="contact-title">Let's build<br>something good.</h2></div><div><p class="contact-note">Have a problem worth working on, a role that sounds like a fit, or just want to compare notes on software? My inbox is open.</p><a class="contact-email" href="mailto:jordantruong26@gmail.com">jordantruong26@gmail.com</a></div></div></section>
 	</main>
-	<footer><div class="wrap mono"><span>Jordan Truong / 2025</span><span>Designed & built in Kelowna</span></div></footer>
+	<footer><div class="wrap mono"><span>Jordan Truong / 2026</span><span>Designed & built in Kelowna</span></div></footer>
 	<script src="script.js" defer></script>
 </body>
 </html>
